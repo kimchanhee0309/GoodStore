@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Points.unity
     guid: bf44b6242ec46e749a261c8e8893a201
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scan.unity
     guid: ee8193f868e73454994bc6e70fb27b5a
   m_configObjects:
