@@ -13,7 +13,6 @@ public class spin : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (brrcnt <= -level || brrcnt >= level) brrcnt = -level + 2;
