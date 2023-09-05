@@ -1,8 +1,10 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Android;
+//using System.Numerics;
+//using UnityEngine.UIElements;
 
 public class GPSService : MonoBehaviour
 {
@@ -21,15 +23,15 @@ public class GPSService : MonoBehaviour
 
         }
 
-        Debug.Log("1");
+        //Debug.Log("1");
         //Check if the user has location service enabled.
         if (!Input.location.isEnabledByUser) //위치 정보 접근을 허용한 상태여야만 다음으로 넘어가짐(위치 서비스 액세스 허용, 위치 서비스 시작)
             yield break;
 
-        Debug.Log("2");
+        //Debug.Log("2");
         //Starts the location service.
         Input.location.Start();
-        Debug.Log("3");
+        //Debug.Log("3");
 
         //Waits until the location service initializes , 서비스 초기화 대기
         int maxWait = 20;
@@ -75,3 +77,4 @@ public class GPSService : MonoBehaviour
         return vPos;
     }
 }
+*/
