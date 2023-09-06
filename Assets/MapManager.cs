@@ -59,7 +59,7 @@ public class MapManager : MonoBehaviour
         string url = strBaseURL + "center=" + latitude + "," + longitude +
             "&zoom=" + zoom.ToString() +
             "&size=" + mapWidth.ToString() + "x" + mapHeight.ToString()
-            + "&key=" + strAPIKey;
+            + "&markers=color:green%7Clabel:S%7C" + 37.477355511121274 + "," + 126.86260087181347 +  "&key=" + strAPIKey;
 
         Debug.Log("URL : " + url);
 
@@ -68,7 +68,7 @@ public class MapManager : MonoBehaviour
 
         yield return req.SendWebRequest(); 
 
-        mapRawImage.texture = DownloadHandlerTexture.GetContent(req); 
+        mapRawImage.texture = DownloadHandlerTexture.GetContent(req);
     }
 }
 
