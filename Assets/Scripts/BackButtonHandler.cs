@@ -14,16 +14,19 @@ public class BackButtonHandler : MonoBehaviour
         //폰에서 뒤로가기 키를 누를 때
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if(flashlightScript != null)
+            {
+                flashlightScript.TurnOff();
+            }
+
             //홈 씬이라면
             if (SceneManager.GetActiveScene().name == "Home")
             {
                 //앱을 끄기 전에 폰 후레시 끄기
                 if (flashlightScript != null && !flashlightScript.isFlashOn)
                 {
-                    flashlightScript.TurnOn();
+                    flashlightScript.TurnOff();
                 }
-                //앱을 끄기
-                Application.Quit();
             }
             //홈 씬이 아니라면
             else
