@@ -435,12 +435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930774225260a74439db22f7dbf6db39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapRawImage: {fileID: 0}
-  strBaseURL: https://maps.googleapis.com/maps/api/staticmap?
-  zoom: 17
-  mapWidth: 700
-  mapHeight: 700
-  strAPIKey: AIzaSyAykCyEcCFWRBfyaIUp4SGJYDaMPJdLH3Q
 --- !u!114 &576216782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1500,7 +1494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940346f121487a74eabd7e4ebaa055da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMsg: {fileID: 1420813100}
 --- !u!4 &1549350589
 Transform:
   m_ObjectHideFlags: 0
@@ -1987,6 +1980,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1299822592}
+  - {fileID: 576216780}
   - {fileID: 7589524025409534742}
   - {fileID: 7589524025168710032}
   - {fileID: 1380982154}
@@ -1995,8 +1990,6 @@ RectTransform:
   - {fileID: 743787974}
   - {fileID: 1766177337}
   - {fileID: 1420813098}
-  - {fileID: 576216780}
-  - {fileID: 1299822592}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
