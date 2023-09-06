@@ -18,8 +18,8 @@ public class MapManager : MonoBehaviour
     public string strAPIKey = "";
 
     //public GPSlocation GPSlocation;
-    private double latitude = 0;
-    private double longitude = 0;
+    private double latitude = 37.477355511121274;
+    private double longitude = 126.86260087181347;
 
     private double save_latitude = 0;
     private double save_longitude = 0;
@@ -49,7 +49,6 @@ public class MapManager : MonoBehaviour
                 save_longitude = longitude;
                 StartCoroutine(LoadMap());
             }
-            print("3ÃÊ");
             yield return new WaitForSeconds(3f);
         }
         
@@ -67,9 +66,9 @@ public class MapManager : MonoBehaviour
         url = UnityWebRequest.UnEscapeURL(url);
         UnityWebRequest req = UnityWebRequestTexture.GetTexture(url);
 
-        yield return req.SendWebRequest(); //req°ª ¹ÝÈ¯!
+        yield return req.SendWebRequest(); 
 
-        mapRawImage.texture = DownloadHandlerTexture.GetContent(req); // ¸Ê >> ÀÌ¹ÌÁö¿¡ Àû¿ë
+        mapRawImage.texture = DownloadHandlerTexture.GetContent(req); 
     }
 }
 
@@ -85,7 +84,7 @@ public class MapManager : MonoBehaviour
 //{
 //    public RawImage mapRawImage;
 
-//    [Header("¸Ê Á¤º¸ ¼³Á¤")]
+//    [Header("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
 //    public string strBaseURL = "";
 //    private double latitude;
 //    private double longitude;

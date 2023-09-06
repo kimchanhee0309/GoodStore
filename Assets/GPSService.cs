@@ -25,7 +25,7 @@ public class GPSService : MonoBehaviour
 
         //Debug.Log("1");
         //Check if the user has location service enabled.
-        if (!Input.location.isEnabledByUser) //위치 정보 접근을 허용한 상태여야만 다음으로 넘어가짐(위치 서비스 액세스 허용, 위치 서비스 시작)
+        if (!Input.location.isEnabledByUser)
             yield break;
 
         //Debug.Log("2");
@@ -33,7 +33,6 @@ public class GPSService : MonoBehaviour
         Input.location.Start();
         //Debug.Log("3");
 
-        //Waits until the location service initializes , 서비스 초기화 대기
         int maxWait = 20;
         while (Input.location.status ==
             LocationServiceStatus.Initializing && maxWait > 0)
@@ -58,7 +57,7 @@ public class GPSService : MonoBehaviour
         {
             while (true)
             {
-                textMsg.text = "위치: "
+                textMsg.text = "Map SET "
                     + Input.location.lastData.latitude + " "
                     + Input.location.lastData.longitude + " "
                     + Input.location.lastData.horizontalAccuracy;

@@ -9,18 +9,18 @@
 //{
 //    public RawImage mapRawImage;
 
-//    [Header("¸Ê Á¤º¸ ¼³Á¤")]
+//    [Header("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
 //    public string strBaseURL = "https://maps.googleapis.com/maps/api/staticmap?";
 //    public int zoom = 14;
-//    public int mapWidth = 640; // ¿øÇÏ´Â ÀÌ¹ÌÁö Å©±â·Î º¯°æÇÏ¼¼¿ä.
-//    public int mapHeight = 480; // ¿øÇÏ´Â ÀÌ¹ÌÁö Å©±â·Î º¯°æÇÏ¼¼¿ä.
-//    public string strAPIKey = "YOUR_API_KEY"; // º»ÀÎÀÇ Google Maps API Å°·Î º¯°æÇÏ¼¼¿ä.
+//    public int mapWidth = 640; // ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.
+//    public int mapHeight = 480; // ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.
+//    public string strAPIKey = "YOUR_API_KEY"; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Google Maps API Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.
 //    private double latitude;
 //    private double longitude;
 
 //    private IEnumerator Start()
 //    {
-//        // À§Ä¡ ±ÇÇÑ ¿äÃ»
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
 //        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
 //        {
 //            Permission.RequestUserPermission(Permission.FineLocation);
@@ -33,33 +33,33 @@
 
 //    private IEnumerator GetLocation()
 //    {
-//        // À§Ä¡ ±ÇÇÑÀÌ ½ÂÀÎµÇ¾ú´ÂÁö È®ÀÎ
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÎµÇ¾ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 //        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
 //        {
-//            Debug.LogError("À§Ä¡ ±ÇÇÑÀÌ ½ÂÀÎµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+//            Debug.LogError("ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ ï¿½Ê¾Ò½ï¿½ï¿½Ï´ï¿½.");
 //            yield break;
 //        }
 
-//        // À§Ä¡ ¼­ºñ½º ÃÊ±âÈ­
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 //        Input.location.Start();
 
-//        // À§Ä¡ Á¤º¸¸¦ ±â´Ù¸²
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ù¸ï¿½
 //        while (Input.location.status == LocationServiceStatus.Initializing)
 //        {
 //            yield return new WaitForSeconds(1);
 //        }
 
-//        // À§Ä¡ Á¤º¸¸¦ ¾òÀ½
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //        if (Input.location.status == LocationServiceStatus.Failed)
 //        {
-//            Debug.LogError("À§Ä¡ Á¤º¸¸¦ ¾òÀ» ¼ö ¾ø½À´Ï´Ù.");
+//            Debug.LogError("ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 //            yield break;
 //        }
 
 //        latitude = Input.location.lastData.latitude;
 //        longitude = Input.location.lastData.longitude;
 
-//        // À§Ä¡ ¼­ºñ½º ÁßÁö
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //        Input.location.Stop();
 //    }
 
@@ -82,7 +82,7 @@
 //        }
 //        else
 //        {
-//            Debug.LogError("Áöµµ ÀÌ¹ÌÁö ·Îµå ½ÇÆÐ: " + req.error);
+//            Debug.LogError("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½: " + req.error);
 //        }
 //    }
 
