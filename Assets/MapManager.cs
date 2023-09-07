@@ -59,9 +59,9 @@ public class MapManager : MonoBehaviour
         string url = strBaseURL + "center=" + latitude + "," + longitude +
             "&zoom=" + zoom.ToString() +
             "&size=" + mapWidth.ToString() + "x" + mapHeight.ToString()
-            + "&markers=color:red%7Clabel:M%7C" + latitude + "," + longitude + "&markers=color:green%7Clabel:S%7C" + 37.477616967392315 + "," + 126.86274171287637 +
-            "&markers=color:green%7Clabel:S%7C" + 37.47763773505701 + "," + 126.86316846065043 + "&markers=color:green%7Clabel:S%7C" + 37.477800004658576 + "," + 126.8632444776359 +
-            "&markers=color:green%7Clabel:S%7C" + 37.47807281825236 + "," + 126.85962334660965 + "&markers=color:green%7Clabel:S%7C" + 37.47762798354133 + "," + 126.86252971307555 + "&key=" + strAPIKey;
+            + "&markers=color:red%7Clabel:M%7C" + latitude + "," + longitude + "&markers=color:green%7Clabel:S%7C" + 37.478059336726744 + "," + 126.85965163594274 +
+            "&markers=color:green%7Clabel:S%7C" + 37.47777523678104 + "," + 126.86325300197274 + "&markers=color:green%7Clabel:S%7C" + 37.47761472800759 + "," + 126.86275302255163 +
+            "&markers=color:green%7Clabel:S%7C" + 37.47760319927338 + "," + 126.86252410568638 + "&markers=color:green%7Clabel:S%7C" + 37.47765806661859 + "," + 126.86321929871752 + "&key=" + strAPIKey;
 
         Debug.Log("URL : " + url);
 
