@@ -1228,7 +1228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1420813098
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2020,7 +2020,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
+=======
   - {fileID: 1299822592}
+>>>>>>> origin/jiu-br
   - {fileID: 576216780}
   - {fileID: 7589524025409534742}
   - {fileID: 7589524025168710032}
@@ -2030,6 +2033,10 @@ RectTransform:
   - {fileID: 743787974}
   - {fileID: 1766177337}
   - {fileID: 1420813098}
+<<<<<<< HEAD
+  - {fileID: 1299822592}
+=======
+>>>>>>> origin/jiu-br
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
