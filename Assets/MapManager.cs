@@ -59,7 +59,9 @@ public class MapManager : MonoBehaviour
         string url = strBaseURL + "center=" + latitude + "," + longitude +
             "&zoom=" + zoom.ToString() +
             "&size=" + mapWidth.ToString() + "x" + mapHeight.ToString()
-            + "&markers=color:green%7Clabel:S%7C" + 37.477355511121274 + "," + 126.86260087181347 +  "&key=" + strAPIKey;
+            + "&markers=color:red%7Clabel:M%7C" + latitude + "," + longitude + "&markers=color:green%7Clabel:S%7C" + 37.477616967392315 + "," + 126.86274171287637 +
+            "&markers=color:green%7Clabel:S%7C" + 37.47763773505701 + "," + 126.86316846065043 + "&markers=color:green%7Clabel:S%7C" + 37.477800004658576 + "," + 126.8632444776359 +
+            "&markers=color:green%7Clabel:S%7C" + 37.47807281825236 + "," + 126.85962334660965 + "&markers=color:green%7Clabel:S%7C" + 37.47762798354133 + "," + 126.86252971307555 + "&key=" + strAPIKey;
 
         Debug.Log("URL : " + url);
 
