@@ -435,12 +435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930774225260a74439db22f7dbf6db39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapRawImage: {fileID: 0}
-  strBaseURL: https://maps.googleapis.com/maps/api/staticmap?
-  zoom: 17
-  mapWidth: 700
-  mapHeight: 700
-  strAPIKey: AIzaSyAykCyEcCFWRBfyaIUp4SGJYDaMPJdLH3Q
 --- !u!114 &576216782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,8 +1488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940346f121487a74eabd7e4ebaa055da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMsg: {fileID: 1420813100}
-  markerPrefab: {fileID: 2923540971407457507, guid: 3a48783a635519b4a88b67f701251fad, type: 3}
 --- !u!4 &1549350589
 Transform:
   m_ObjectHideFlags: 0
@@ -1506,6 +1498,52 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1692648386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1692648388}
+  - component: {fileID: 1692648387}
+  m_Layer: 0
+  m_Name: BackButtonHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1692648387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692648386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c078708bb111bc459bb9a01a6eaca50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashlightScript: {fileID: 0}
+  ParentSceneName: 
+--- !u!4 &1692648388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692648386}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.469559, y: 357.42114, z: -4.056724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1982,6 +2020,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
+=======
+  - {fileID: 1299822592}
+>>>>>>> origin/jiu-br
   - {fileID: 576216780}
   - {fileID: 7589524025409534742}
   - {fileID: 7589524025168710032}
@@ -1991,7 +2033,10 @@ RectTransform:
   - {fileID: 743787974}
   - {fileID: 1766177337}
   - {fileID: 1420813098}
+<<<<<<< HEAD
   - {fileID: 1299822592}
+=======
+>>>>>>> origin/jiu-br
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5105,3 +5150,4 @@ SceneRoots:
   - {fileID: 335122180}
   - {fileID: 123625411}
   - {fileID: 1549350589}
+  - {fileID: 1692648388}
