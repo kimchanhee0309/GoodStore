@@ -1,96 +1,96 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Networking;
-using UnityEngine.UI;
-using UnityEngine.Android;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+//using UnityEngine.Networking;
+//using UnityEngine.UI;
+//using UnityEngine.Android;
 
-public class MapManager : MonoBehaviour
-{
-    public RawImage mapRawImage;
+//public class MapManager : MonoBehaviour
+//{
+//    public RawImage mapRawImage;
 
-    [Header("¸Ê Á¤º¸ ¼³Á¤")]
-    public string strBaseURL = "https://maps.googleapis.com/maps/api/staticmap?";
-    public int zoom = 14;
-    public int mapWidth = 640; // ¿øÇÏ´Â ÀÌ¹ÌÁö Å©±â·Î º¯°æÇÏ¼¼¿ä.
-    public int mapHeight = 480; // ¿øÇÏ´Â ÀÌ¹ÌÁö Å©±â·Î º¯°æÇÏ¼¼¿ä.
-    public string strAPIKey = "YOUR_API_KEY"; // º»ÀÎÀÇ Google Maps API Å°·Î º¯°æÇÏ¼¼¿ä.
-    private double latitude;
-    private double longitude;
+//    [Header("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
+//    public string strBaseURL = "https://maps.googleapis.com/maps/api/staticmap?";
+//    public int zoom = 14;
+//    public int mapWidth = 640; // ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.
+//    public int mapHeight = 480; // ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.
+//    public string strAPIKey = "YOUR_API_KEY"; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Google Maps API Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.
+//    private double latitude;
+//    private double longitude;
 
-    private IEnumerator Start()
-    {
-        // À§Ä¡ ±ÇÇÑ ¿äÃ»
-        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
-        {
-            Permission.RequestUserPermission(Permission.FineLocation);
-        }
+//    private IEnumerator Start()
+//    {
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+//        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+//        {
+//            Permission.RequestUserPermission(Permission.FineLocation);
+//        }
 
-        yield return GetLocation();
+//        yield return GetLocation();
 
-        StartCoroutine(LoadMap());
-    }
+//        StartCoroutine(LoadMap());
+//    }
 
-    private IEnumerator GetLocation()
-    {
-        // À§Ä¡ ±ÇÇÑÀÌ ½ÂÀÎµÇ¾ú´ÂÁö È®ÀÎ
-        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
-        {
-            Debug.LogError("À§Ä¡ ±ÇÇÑÀÌ ½ÂÀÎµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
-            yield break;
-        }
+//    private IEnumerator GetLocation()
+//    {
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÎµÇ¾ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+//        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+//        {
+//            Debug.LogError("ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ ï¿½Ê¾Ò½ï¿½ï¿½Ï´ï¿½.");
+//            yield break;
+//        }
 
-        // À§Ä¡ ¼­ºñ½º ÃÊ±âÈ­
-        Input.location.Start();
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
+//        Input.location.Start();
 
-        // À§Ä¡ Á¤º¸¸¦ ±â´Ù¸²
-        while (Input.location.status == LocationServiceStatus.Initializing)
-        {
-            yield return new WaitForSeconds(1);
-        }
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ù¸ï¿½
+//        while (Input.location.status == LocationServiceStatus.Initializing)
+//        {
+//            yield return new WaitForSeconds(1);
+//        }
 
-        // À§Ä¡ Á¤º¸¸¦ ¾òÀ½
-        if (Input.location.status == LocationServiceStatus.Failed)
-        {
-            Debug.LogError("À§Ä¡ Á¤º¸¸¦ ¾òÀ» ¼ö ¾ø½À´Ï´Ù.");
-            yield break;
-        }
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//        if (Input.location.status == LocationServiceStatus.Failed)
+//        {
+//            Debug.LogError("ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+//            yield break;
+//        }
 
-        latitude = Input.location.lastData.latitude;
-        longitude = Input.location.lastData.longitude;
+//        latitude = Input.location.lastData.latitude;
+//        longitude = Input.location.lastData.longitude;
 
-        // À§Ä¡ ¼­ºñ½º ÁßÁö
-        Input.location.Stop();
-    }
+//        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//        Input.location.Stop();
+//    }
 
-    private IEnumerator LoadMap()
-    {
-        string url = strBaseURL + "center=" + latitude + "," + longitude +
-            "&zoom=" + zoom.ToString() + "&size=" + mapWidth.ToString() + "x" + mapHeight.ToString()
-            + "&key=" + strAPIKey;
+//    private IEnumerator LoadMap()
+//    {
+//        string url = strBaseURL + "center=" + latitude + "," + longitude +
+//            "&zoom=" + zoom.ToString() + "&size=" + mapWidth.ToString() + "x" + mapHeight.ToString()
+//            + "&key=" + strAPIKey;
 
-        Debug.Log("URL : " + url);
+//        Debug.Log("URL : " + url);
 
-        url = UnityWebRequest.UnEscapeURL(url);
-        UnityWebRequest req = UnityWebRequestTexture.GetTexture(url);
+//        url = UnityWebRequest.UnEscapeURL(url);
+//        UnityWebRequest req = UnityWebRequestTexture.GetTexture(url);
 
-        yield return req.SendWebRequest();
+//        yield return req.SendWebRequest();
 
-        if (req.result == UnityWebRequest.Result.Success)
-        {
-            mapRawImage.texture = DownloadHandlerTexture.GetContent(req);
-        }
-        else
-        {
-            Debug.LogError("Áöµµ ÀÌ¹ÌÁö ·Îµå ½ÇÆÐ: " + req.error);
-        }
-    }
+//        if (req.result == UnityWebRequest.Result.Success)
+//        {
+//            mapRawImage.texture = DownloadHandlerTexture.GetContent(req);
+//        }
+//        else
+//        {
+//            Debug.LogError("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½: " + req.error);
+//        }
+//    }
 
-    public Vector2 GetGPSInfo()
-    {
-        Vector2 vPos = new Vector2(Input.location.lastData.latitude,
-    Input.location.lastData.longitude);
+//    public Vector2 GetGPSInfo()
+//    {
+//        Vector2 vPos = new Vector2(Input.location.lastData.latitude,
+//    Input.location.lastData.longitude);
 
-        return vPos;
-    }
-}
+//        return vPos;
+//    }
+//}
